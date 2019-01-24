@@ -1,0 +1,45 @@
+.box {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background: var(--background-color);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+
+
+.header {
+  transition: 1s ease;
+  font-size: 15rem;
+  font-weight: bold;
+}
+
+.subheader {
+  transition: 1s ease;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.link:hover .header,
+.link:hover .subheader {
+  text-shadow: 100px 60px #ffffff2c;
+}
+
+@media only screen and (min-width : 50em) {
+  .header {
+    font-size: 30rem;
+  }
+
+  .subheader {
+    font-size: 4rem;
+  }
+}

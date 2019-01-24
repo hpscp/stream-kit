@@ -10,7 +10,6 @@ http.listen(port, () => {
 });
 
 io.on('connection', socket => {
-  console.log('User connected')
 
   const tmi = require('tmi.js');
 
@@ -37,6 +36,7 @@ io.on('connection', socket => {
 
   twitch.on('connected', (address, port) => {
     twitch.action('jacten', `Stream-Kit Connected`)
+    socket.emit('server.twitchConnect')
   })
 
   twitch.on('chat', (channel, user, message, self) => {
@@ -45,8 +45,18 @@ io.on('connection', socket => {
     }
 
     socket.emit('server.chat', { user, message })
+  })
 
-    console.log('emit on server.chat')
+  twitch.on('disconnect', () => {
+    socket.emit('server.twitchDisconnect')
+  })
+
+  socket.on('client.pin', (data) => {
+    socket.broadcast.emit('server.pin', data)
+  })
+
+  socket.on('client.unpin', (data) => {
+    socket.broadcast.emit('server.unpin', data)
   })
 
   socket.on('disconnect', () => {

@@ -5,8 +5,6 @@ import Main from './Components/Main/Main';
 import Overlay from './Components/Overlay/Overlay';
 import NotFound from './Components/NotFound/NotFound';
 
-import s from './app.module.css';
-
 class App extends Component {
 
   render() {

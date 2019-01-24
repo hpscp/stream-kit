@@ -31,6 +31,7 @@
   flex: 1;
   height: calc(100vh - 4rem);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
@@ -62,5 +63,28 @@
 .overlay {
   border: none;
   width: 100%;
-  height: calc(100% - .1rem);
+  height: 100%;
+}
+
+.twitchTrue, .twitchFalse {
+  padding: 1rem;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: var(--font-color) dashed .1rem;
+  font-weight: bold;
+}
+
+.twitchFalse {
+  color: red;
+}
+
+.twitchTrue {
+  color: green;
+}
+
+.h3 {
+  font-size: 1.4rem;
+  margin: .4rem;
 }
