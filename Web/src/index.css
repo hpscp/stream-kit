@@ -11,9 +11,7 @@ body {
 
   /* variables */
   --font-color: rgb(206, 206, 206);
-  --background-color: rgb(24, 24, 24);
+  --background-color: rgb(37, 37, 37);
   --border: rgb(206, 206, 206) solid .1rem;
 
-  color: var(--font-color);
-  background-color: var(--background-color);
 }

@@ -52,7 +52,8 @@ io.on('connection', socket => {
   })
 
   socket.on('client.pin', (data) => {
-    socket.broadcast.emit('server.pin', data)
+    socket.broadcast.emit('server.pin', data);
+    temp = data;
   })
 
   socket.on('client.unpin', (data) => {

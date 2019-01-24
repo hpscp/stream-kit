@@ -8,7 +8,7 @@ class Main extends Component {
   constructor() {
     super();
     this.state = {
-      data: fakeData,
+      data: [],
       socket: null,
       twitch: false,
       overlay: 'http://localhost:3000/overlay',
@@ -99,8 +99,8 @@ class Main extends Component {
           </div>
           <div className={s.column}>
             <div className={s.h2}> Overlay </div>
-            <div className={s.iframe}>
-              <iframe className={s.overlay} src={this.state.overlay} title={'overlay'}/>
+            <div className={s.wrap}>
+              <iframe className={s.iframe} scrolling="no" src={this.state.overlay} title={'overlay'}/>
             </div>
             <div className={s.h3}> {this.state.overlay} </div>
           </div>
@@ -111,14 +111,3 @@ class Main extends Component {
 }
 
 export default Main;
-
-const fakeData = [
-  {
-    username: 'n8',
-    message: 'Wow this really is a test!'
-  },
-  {
-    username: 'mike',
-    message: 'it is my birthday :/'
-  },
-]

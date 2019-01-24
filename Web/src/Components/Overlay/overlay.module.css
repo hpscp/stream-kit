@@ -1,6 +1,55 @@
 .container {
   color: var(--background-color);
-  background-color: var(--font-color);
+  background-color: transparent;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
+
+.comment {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  position: absolute;
+  height: 5rem;
+  width: 25rem;
+  left: 10rem;
+}
+
+.commentEnter {
+  bottom: 10rem;
+  animation: commentEnter .5s;
+}
+
+
+@keyframes commentEnter {
+  from {bottom: -10rem;}
+  to {bottom: 10rem;}
+}
+
+.commentExit {
+  bottom: -10rem;
+  animation: commentExit .5s;
+}
+
+@keyframes commentExit {
+  from {bottom: 10rem;}
+  to {bottom: -10rem;}
+}
+
+.username {
+  padding: 0 1rem;
+  margin: .5rem 0;
+  font-weight: bolder;
+  font-size: 1.4rem;
+}
+
+.message {
+  padding: 1rem;
+  margin: .5rem 0;
+  background-color: var(--font-color);
+  color: var(--background-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex: 1;
+}
+

@@ -9,6 +9,7 @@ class Overlay extends Component {
     this.state = {
       comment: null,
       socket: null,
+      animationClass: null,
     }
   }
 
@@ -25,11 +26,9 @@ class Overlay extends Component {
     const { socket } = this.state;
     socket.on('connect', () => {
       socket.emit('overlay.ready');
-      console.log('connected')
     });
 
     socket.on('server.pin', (data) => {
-      console.log('server.pin')
       this.handlePin(data);
     })
 
@@ -46,9 +45,22 @@ class Overlay extends Component {
   }
 
   handlePin = (data) => {
-    this.setState({
-      comment: data,
-    })
+    if (JSON.stringify(this.state.comment) === JSON.stringify(data)) {
+      this.setState({
+        animationClass: s.commentExit
+      })
+      setTimeout(() => {
+        this.setState({
+          comment: null,
+        })
+      }, 500)
+    } else {
+      this.setState({
+        comment: data,
+        animationClass: s.commentEnter,
+      })
+    }
+
   }
 
   handleUnpin = () => {
@@ -62,7 +74,14 @@ class Overlay extends Component {
       <div className={s.container}>
         {
           this.state.comment 
-          ? <div>{this.state.comment.username}: {this.state.comment.message}</div>
+          ? <div className={`${s.comment} ${this.state.animationClass}`}>
+              <div className={s.username}>
+                {this.state.comment.username}
+              </div>
+              <div className={s.message}>
+                {this.state.comment.message}
+              </div>
+            </div>
           : <div>no overlay</div>
         }
       </div>
