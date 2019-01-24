@@ -1,3 +1,3 @@
-#Stream-Kit
+# Stream-Kit
 
-The Uber of Twitch Chatbots!
+### The Uber of Twitch Chatbots!
