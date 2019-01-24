@@ -1,0 +1,13 @@
+{
+  "name": "stream-kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run client && npm run server",
+    "client": "cd Web && npm run start",
+    "server": "cd API && nodemon index.js"
+  },
+  "author": "hpscp",
+  "license": "ISC"
+}

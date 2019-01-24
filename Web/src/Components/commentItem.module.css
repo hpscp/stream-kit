@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-bottom: var(--font-color) dashed .1rem;
+  font-size: 1.6rem;  
+}
+
+.username {
+  font-weight: bolder;
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  padding: 1rem;
+  border-right: var(--font-color) dashed .1rem;
+}
+
+.message {
+flex: 4;
+padding: 1rem 1rem;
+}
